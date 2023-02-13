@@ -1,0 +1,40 @@
+<!-- <div *ngFor="let popular of (popularMovies$ | async)?.results">
+  {{ popular.backdrop_path }}
+  <img src="https://image.tmdb.org/t/p/original{{popular.backdrop_path}}">
+</div> -->
+<section>
+
+    <ngb-carousel
+      [showNavigationArrows]="showNavigationArrows"
+      [showNavigationIndicators]="showNavigationIndicators"
+    >
+      <ng-template
+        ngbSlide
+        *ngFor="let popular of (popularMovies$ | async)?.results"
+      >
+        <div class="picsum-img-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/original{{ popular.backdrop_path }}"
+          />
+        </div>
+        <div class="carousel-caption">
+          <div class="title">
+            <h2>{{ popular.original_title }}</h2>
+          </div>
+          <div class="second-row">
+              <div class="runtime">
+                <h4>{{ popular.release_date }}</h4>
+              </div>
+              <div class="rating">
+                <h4>{{ popular.vote_average}}</h4>
+                <i class="fa-sharp fa-solid fa-star"></i>
+              </div>
+          </div>
+          <div class="description">
+              <p>{{popular.overview}}</p>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+</section>
+

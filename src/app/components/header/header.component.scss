@@ -1,0 +1,43 @@
+section{
+    margin: 1rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLeft,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+  height: 50px;
+}
+
+a > span {
+  margin: 0 30px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+}
+
+a {
+  & > span:hover {
+    color: red;
+  }
+  text-decoration: none;
+}
+
+.header__icon {
+  width: 80px;
+  cursor: pointer;
+}
+
+.user__avatar {
+  font-size: 2rem;
+}
