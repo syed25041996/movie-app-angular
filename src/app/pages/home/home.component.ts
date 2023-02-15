@@ -19,18 +19,8 @@ export class HomeComponent {
 		config.showNavigationIndicators = true;
   }
 
-  images: string[] = [];
-  randomNumber : number = Math.floor(Math.random() * 10)
 
   ngOnInit() {
-    this.popularMovies$.subscribe((res) =>
-      res['results'].forEach((element: any) => {
-        this.images.push(element.backdrop_path)
-        console.log(this.images)
-      })
-      );
-      console.log(this.randomNumber)
-
-    console.log(this.images);
+    
   }
 }

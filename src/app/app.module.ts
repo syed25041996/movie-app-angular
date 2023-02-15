@@ -11,6 +11,7 @@ import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MoviesService } from './services/movies.service';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MoviesService } from './services/movies.service';
     MovieListComponent,
     ErrorComponent,
     HeaderComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
