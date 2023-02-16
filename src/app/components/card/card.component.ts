@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -8,9 +9,15 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class CardComponent {
   popularMovies$ = this.popularApi.getPopularMovies();
+  upcomingMovies$ = this.popularApi.getUpcomingMovies();
 
-  constructor(private popularApi: MoviesService) {
+  constructor(private popularApi: MoviesService,private router: Router) {
     
   }
+
+  ngOnInit(){
+    
+  }
+  
 
 }
