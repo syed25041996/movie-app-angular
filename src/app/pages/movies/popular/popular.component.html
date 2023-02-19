@@ -1,0 +1,16 @@
+<section>
+  <div class="container popular-container">
+    <div
+      class="cards"
+      *ngFor="let popular of (popularMovies$ | async)?.results"
+    >
+      <div class="card">
+        <img
+          class="cards__img"
+          src="https://image.tmdb.org/t/p/original{{ popular.poster_path }}"
+        />
+        {{ popular.title }}
+      </div>
+    </div>
+  </div>
+</section>

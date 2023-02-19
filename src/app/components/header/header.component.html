@@ -1,16 +1,13 @@
 <section>
-    <div className="header">
-      <div className="headerLeft">
+    <div class="header">
+      <div class="headerLeft">
         <img
-          className="header__icon"
+          class="header__icon"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png"
         />
-        <a [routerLink]="['movie-list']"
-        [queryParams]="{category:'popular'}"><span>Popular</span></a>
-        <a [routerLink]="['movie-list']"
-        [queryParams]="{category:'top-rated'}"><span>Top Rated</span></a>
-        <a [routerLink]="['movie-list']"
-        [queryParams]="{category:'upcoming'}"><span>Upcoming</span></a>
+        <a [routerLink]="['movie-list']"><span>Popular</span></a>
+        <a [routerLink]="['movie-list','top-rated']"><span>Top Rated</span></a>
+        <a [routerLink]="['movie-list','upcoming']"><span>Upcoming</span></a>
       </div>
     </div>
 </section>
