@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class MovieDetailComponent {
 
+  currentMovieDetail : any
+
+  ngOnInit(){
+    this.currentMovieDetail = JSON.parse(localStorage.getItem("movie")!)
+    console.log(this.currentMovieDetail)
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -10,7 +11,13 @@ export class PopularComponent {
 
   popularMovies$ = this.api.getPopularMovies()
 
-  constructor(private api: MoviesService){}
+  constructor(private api: MoviesService, private router : Router){}
 
   ngOnInit(){}
+
+  getMovie(movie : any){
+    console.log(movie)
+    localStorage.setItem("movie", JSON.stringify(movie))
+    this.router.navigate(['movie',movie.id])
+  }
 }

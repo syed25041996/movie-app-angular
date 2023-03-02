@@ -1,16 +1,19 @@
-
-<a>
-  <div class="cards"
-  *ngFor="let popular of (popularMovies$ | async)?.results"
-  >
-      <img class="cards__img"  src="https://image.tmdb.org/t/p/original{{ popular.poster_path }}" />
-      <div class="cards__overlay">
-          <div class="card__title">{{popular.original_title}}</div>
-          <div class="card__runtime">
-              {{popular.release_date}}
-              <span class="card__rating">{{popular.vote_average}}<i class="fas fa-star" ></i></span>
-          </div>
-          <div class="card__description">{{popular.overview.slice(0,118)}}</div>
+<div class="cards" *ngFor="let popular of (popularMovies$ | async)?.results">
+  <a (click)="getMovie(popular)">
+    <img
+      class="cards__img"
+      src="https://image.tmdb.org/t/p/original{{ popular.poster_path }}"
+    />
+    <div class="cards__overlay">
+      <div class="card__title">{{ popular.original_title }}</div>
+      <div class="card__runtime">
+        {{ popular.release_date }}
+        <span class="card__rating"
+          >{{ popular.vote_average }}<i class="fas fa-star"></i
+        ></span>
       </div>
-  </div>
-</a>
+      <div class="card__description">{{ popular.overview.slice(0, 118) }}</div>
+    </div>
+    <!-- {{popular | json}} -->
+  </a>
+</div>
