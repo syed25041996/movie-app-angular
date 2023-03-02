@@ -1,16 +1,16 @@
-<section>
-  <div class="container popular-container">
-    <div
-      class="cards"
-      *ngFor="let popular of (popularMovies$ | async)?.results"
-    >
-      <div class="card">
-        <img
-          class="cards__img"
-          src="https://image.tmdb.org/t/p/original{{ popular.poster_path }}"
-        />
-        {{ popular.title }}
+
+<a>
+  <div class="cards"
+  *ngFor="let popular of (popularMovies$ | async)?.results"
+  >
+      <img class="cards__img"  src="https://image.tmdb.org/t/p/original{{ popular.poster_path }}" />
+      <div class="cards__overlay">
+          <div class="card__title">{{popular.original_title}}</div>
+          <div class="card__runtime">
+              {{popular.release_date}}
+              <span class="card__rating">{{popular.vote_average}}<i class="fas fa-star" ></i></span>
+          </div>
+          <div class="card__description">{{popular.overview.slice(0,118)}}</div>
       </div>
-    </div>
   </div>
-</section>
+</a>

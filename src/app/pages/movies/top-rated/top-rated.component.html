@@ -1,1 +1,16 @@
-<p>top-rated works!</p>
+
+<a>
+  <div class="cards"
+  *ngFor="let top of (topMovies$ | async)?.results"
+  >
+      <img class="cards__img"  src="https://image.tmdb.org/t/p/original{{ top.poster_path }}" />
+      <div class="cards__overlay">
+          <div class="card__title">{{top.original_title}}</div>
+          <div class="card__runtime">
+              {{top.release_date}}
+              <span class="card__rating">{{top.vote_average}}<i class="fas fa-star" ></i></span>
+          </div>
+          <div class="card__description">{{top.overview.slice(0,118)}}</div>
+      </div>
+  </div>
+</a>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-upcoming',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./upcoming.component.scss']
 })
 export class UpcomingComponent {
+
+  upcomingMovies$ = this.api.getUpcomingMovies()
+
+  constructor(private api: MoviesService){}
 
 }

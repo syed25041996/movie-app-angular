@@ -1,1 +1,17 @@
-<p>upcoming works!</p>
+
+  <a>
+    <div class="cards"
+    *ngFor="let upcoming of (upcomingMovies$ | async)?.results"
+    >
+        <img class="cards__img"  src="https://image.tmdb.org/t/p/original{{ upcoming.poster_path }}" />
+        <div class="cards__overlay">
+            <div class="card__title">{{upcoming.original_title}}</div>
+            <div class="card__runtime">
+                {{upcoming.release_date}}
+                <span class="card__rating">{{upcoming.vote_average}}<i class="fas fa-star" ></i></span>
+            </div>
+            <div class="card__description">{{upcoming.overview.slice(0,118)}}</div>
+        </div>
+    </div>
+  </a>
+  
